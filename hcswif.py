@@ -14,7 +14,8 @@ import warnings
 # Define environment
 
 # Where do you want your job output (json files, stdout, stderr)?
-out_dir = os.path.join('/home/', getpass.getuser() , 'hcswif/output')
+#out_dir = os.path.join('/home/', getpass.getuser() , 'hcswif/output')
+out_dir = '/lustre/expphy/volatile/hallc/c-kaonlt/cyero/hcswif_output'
 if not os.path.isdir(out_dir):
     warnings.warn('out_dir: ' + out_dir + ' does not exist')
 
@@ -345,7 +346,7 @@ def addCommonJobInfo(workflow, parsed_args):
 
     # RAM in bytes
     if parsed_args.ram==None:
-        ram_bytes = 2500000000
+        ram_bytes = 5000000000
     else:
         ram_bytes = int(parsed_args.ram[0])
 
@@ -377,7 +378,7 @@ def addCommonJobInfo(workflow, parsed_args):
         job['stderr'] = os.path.join(out_dir, job['name'] + '.err')
 
         # TODO: Allow user to specify all of these parameters
-        job['os'] = 'centos7'
+        job['os'] = 'centos77'
         job['track'] = 'analysis'
         job['diskBytes'] = disk_bytes
         job['ramBytes'] = ram_bytes

@@ -1,0 +1,15 @@
+This directory faciliates job submission using hcswif
+
+----------------
+run_swif_hel.sh
+----------------
+this shell script is specific to the Kaon LT 2018 beam-helicity 
+analysis and creates the and submits a jason file under a
+workflow so that the job can be executed in the jlab computing system
+
+------------------------
+my_command_list_hel.txt
+------------------------
+this .txt file defines the shell script that 
+actually run the analysis. 
+
